@@ -3,7 +3,7 @@
   <div class="special text-center">
     <% @quotes = Quote.where(id: rand(7..1800))%>
     <div class="special2 text-center">
-     <%= Quote.where(:id => rand(7..1800)).first.the_quote %>
+     <%= "#{Quote.where(:id => rand(7..1800)).first.the_quote}" %>
     </div>
   </div>
   <div class='pull-right'>
@@ -16,5 +16,5 @@
      <script>
       (adsbygoogle = window.adsbygoogle || []).push({});
      </script>
-   ork</div>
+  </div>
   <div class="special3"><%= link_to 'Next Quote', root_path %></div>
