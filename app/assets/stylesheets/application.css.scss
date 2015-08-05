@@ -12,16 +12,17 @@ body{
 }
 
 .special {
-  height: 350px;
-  width: 600px;
-  background: linear-gradient(to bottom, #b5bdc8 0%,#828c95 55%,#28343b 100%);
+  height: auto;
+  max-width: 550px;
+  //background: linear-gradient(to bottom, #b5bdc8 0%,#828c95 55%,#28343b 100%);
+  background-color: #9b9b9b;
   border-radius: 5px;
   font-size: 30px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
+  // position: absolute;
+  // top: 50%;
+  // left: 50%;
+  // margin-right: -50%;
+  // transform: translate(-50%, -50%);
   box-shadow: 10px 10px 5px #888888;
 }
 

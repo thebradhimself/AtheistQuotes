@@ -1,31 +1,35 @@
-<h1 class='page-header text-center the-head'>Quotes on Atheism</h1>
+<div class='row'> <h1 class='page-header text-center the-head'>Quotes on Atheism</h1> </div>
+<div class="row">
 
-  <div class="special text-center">
+
+<div class="col-sm-offset-3 col-sm-6">
+  <div class=" text-center">
     <% @quotes = Quote.where(id: rand(7..1800))%>
-    <div class="special2 text-center">
-     <%= "#{Quote.where(:id => rand(7..1800)).first.the_quote}" %>
+    <div class="special text-center">
+      <% @quote = "#{Quote.where(:id => rand(7..1800)).first.the_quote}".html_safe %>
+
+      <% @newquote = @quote.split %>
+        <% if @newquote.last.include? '-' %>
+          <% @newquote[@newquote.count - 1] = @newquote[@newquote.count - 1].gsub('-', "<br><br>-") %>
+        <% elsif @newquote[@newquote.count - 2].include? '-'%>
+          <% @newquote[@newquote.count - 2] = @newquote[@newquote.count - 2].gsub('-', "<br><br>-") %>
+        <% else %>
+          <% @newquote[@newquote.count - 3] = @newquote[@newquote.count - 3].gsub('-', "<br><br>-") %>
+        <% end %>
+     <%= @newquote.join(' ').html_safe %>
     </div>
+      <div class="pull-right"><%= link_to 'Next Quote', root_path, class: 'btn btn-success', style: 'margin-top: 10%;' %></div>
   </div>
-  <div class='pull-right'>
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <!-- weLoveAtheism2 -->
-    <ins class="adsbygoogle"
-         style="display:inline-block;width:120px;height:600px"
-         data-ad-client="ca-pub-5362989041036391"
-         data-ad-slot="4671044015"></ins>
-    <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-  </div>
-  <div class='pull-left'>
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <!-- weLoveAtheism2 -->
-    <ins class="adsbygoogle"
-         style="display:inline-block;width:120px;height:600px"
-         data-ad-client="ca-pub-5362989041036391"
-         data-ad-slot="4671044015"></ins>
-    <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-  </div>
-  <div class="special3"><%= link_to 'Next Quote', root_path %></div>
+</div>
+<div class='col-sm-2'>
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <!-- Square -->
+  <ins class="adsbygoogle"
+     style="display:inline-block;width:200px;height:200px"
+     data-ad-client="ca-pub-5362989041036391"
+     data-ad-slot="9076806811"></ins>
+  <script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+</div>
