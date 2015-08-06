@@ -4,4 +4,8 @@ class PagesController < ApplicationController
     @quotes = Quote.all
   end
 
+  def author
+    @authors = Quote.all
+  end
+
 end
