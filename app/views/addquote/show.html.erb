@@ -1,0 +1,8 @@
+<table class='table'>
+<% @quotes.each do |quote| %>
+<tr>
+  <td><%= quote.id %></td>
+  <td><%= quote.the_quote.html_safe  %><br><br></td>
+</tr>
+<% end %>
+</table>
