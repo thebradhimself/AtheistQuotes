@@ -7,8 +7,6 @@ body{
 
 }
 
-
-
 .the-head {
 
   font-family: 'Poiret One', cursive;
@@ -31,6 +29,7 @@ body{
 }
 
 .shadows {
+  margin: 2%;
   box-shadow: 3px 3px 2px #888888;
 }
 
@@ -52,5 +51,8 @@ body{
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%);
+}
 
+.buttons-row {
+  max-width: 550px;
 }
