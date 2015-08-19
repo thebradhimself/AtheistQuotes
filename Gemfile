@@ -28,6 +28,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'rails_12factor', group: :production
 
 gem 'puma'
+#new styling shit
+gem 'materialize-sass'
 
 
 

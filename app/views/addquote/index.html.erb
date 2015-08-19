@@ -1,13 +1,12 @@
 
-<div class='row'> <h1 class='page-header text-center the-head'>Add quote to database</h1> </div>
-<div class="col-lg-offset-1 col-lg-2">
-  <ul class="nav nav-pills nav-stacked">
-    <li role="presentation"><a href="/">Home</a></li>
-    <li role="presentation" class="active"><a href="/addquote">Add Quote</a></li>
-    <li role="presentation"><a href="/addquote/1">See all Quotes</a></li>
-  </ul>
-</div>
+<div class='row'> <h1 class='page-header center-align the-head'>Add quote to database</h1> </div>
 <%= form_for @quote, url: addquote_index_path do |f| %>
-  <p class='text-center'><%= f.text_area :quote, placeholder: 'Quote', size: '70' %></p>
-  <p class='text-center'><%= f.text_field :author, placeholder: 'Author' %> <%= submit_tag('Submit') %></p>
+  <div class='center-align input-field'>
+    <label for="add_quote_quote">Quote</label>
+    <input id="add_quote_quote" name="add_quote[quote]" type="text">
+  </div>
+  <div class='input-field center-align'>
+    <label for="add_quote_author">Author</label>
+    <input id="add_quote_author" name="add_quote[author]" type="text">
+    <button class= 'waves-effect waves-teal btn'>Submit</button>
 <% end %>
