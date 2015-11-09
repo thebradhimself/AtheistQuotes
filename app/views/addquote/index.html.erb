@@ -1,6 +1,6 @@
 
 <div class='row'> <h1 class='page-header center-align the-head'>Add quote to database</h1> </div>
-<%= form_for @quote, url: addquote_index_path do |f| %>
+<%= form_for @quote, html: {class: 'fake-name'}, url: addquote_index_path do |f| %>
   <div class='center-align input-field'>
     <label for="add_quote_quote">Quote</label>
     <input id="add_quote_quote" name="add_quote[quote]" type="text">
