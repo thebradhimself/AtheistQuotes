@@ -5,7 +5,7 @@ class AddquoteController < ApplicationController
   end
 
   def show
-    @quotes = Quote.all
+    @quotes = Quote.all.order(:id)
   end
 
   def quotes_added

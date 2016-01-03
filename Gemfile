@@ -29,6 +29,9 @@ gem 'puma'
 #new styling shit
 gem 'materialize-sass'
 
+#ReactJS
+gem 'react-rails', '~> 1.5.0'
+
 
 
 # Use ActiveModel has_secure_password
