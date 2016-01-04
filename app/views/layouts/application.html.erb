@@ -1,50 +1,49 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Quotes</title>
-  <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
-  <%= csrf_meta_tags %>
-   <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
-<div class='container'>
-  <nav style="margin-bottom: 5%;">
-    <div class="nav-wrapper green" style="margin-top: 3%;">
-      <a href="#" class="brand-logo right">Atheist Quotes</a>
-      <a href="#" data-activates="mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
-      <ul id="nav-mobile" class="left hide-on-med-and-down">
-        <li><a href="/">Home</a></li>
-        <li><a href="/addquote">Add Quote</a></li>
-        <li><a href="/allquotes">See All Quotes</a></li>
-      </ul>
-      <ul class="side-nav" id="mobile">
-        <li><a href="/">Home</a></li>
-        <li><a href="/addquote">Add Quote</a></li>
-        <li><a href="/allquotes">See All Quotes</a></li>
-      </ul>
+  <head>
+    <title>Quotes</title>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <%= csrf_meta_tags %>
+     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+  <div class="container">
+    <nav style="margin-bottom: 5%;">
+      <div class="nav-wrapper green" style="margin-top: 3%;">
+        <a href="#" class="brand-logo right">Atheist Quotes</a>
+        <a href="#" data-activates="mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+        <ul id="nav-mobile" class="left hide-on-med-and-down">
+          <li><a href="/">Home</a></li>
+          <li><a href="/addquote">Add Quote</a></li>
+          <li><a href="/allquotes">See All Quotes</a></li>
+        </ul>
+        <ul class="side-nav" id="mobile">
+          <li><a href="/">Home</a></li>
+          <li><a href="/addquote">Add Quote</a></li>
+          <li><a href="/allquotes">See All Quotes</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <%= yield %>
+    <div class='row'>
+      <footer>
+        <hr />
+        copyright &copy <%= Time.now.year %>
+      </footer>
     </div>
-  </nav>
-  <%= yield %>
-  <div class='row'>
-    <footer>
-      <hr />
-      copyright &copy <%= Time.now.year %>
-    </footer>
   </div>
-</div>
 
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-66119835-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
-
-</body>
+      ga('create', 'UA-66119835-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </body>
 </html>

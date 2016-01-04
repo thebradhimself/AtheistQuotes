@@ -69,11 +69,7 @@ class QuotesBox extends React.Component{
 
     return(
       <div className="row">
-        <div className="offset-m1 col m6">
-          <div className='row buttons-row center-align'>
-            <div className="btn btn-success red shadows left-align" onClick={this.previousQuote}>Previous Quote</div>
-            <div className="btn btn-success red shadows right-align" onClick={this.nextQuote}>Next Quote</div>
-          </div>
+        <div className="col m6">
           <div className="row center-align">
             <div className="special center-align" dangerouslySetInnerHTML={{__html: quote }}></div>
           </div>
@@ -82,7 +78,11 @@ class QuotesBox extends React.Component{
             <a href="https://play.google.com/store/apps/details?id=com.leftblank.atheistquotes"><img className="app-buttons" src="http://www.atheist-quotes.com/assets/get-it-on-google-play-583b7d95966b951ab801b5d4651ed5eca6663e749dceabacc992b3546b2f46ef.png"/></a>
           </div>
         </div>
-        <div className="offset-m2 col m2 center-align">
+        <div className="center-align col s12 m1">
+          <div className="btn btn-success grey darken-1 shadows bottom20" onClick={this.previousQuote}>Previous</div>
+          <div className="btn btn-success grey darken-1 shadows bottom20" onClick={this.nextQuote}>Next</div>
+        </div>
+        <div className="center-align offset-m1 col s12 m2">
           {ad}
         </div>
       </div>
