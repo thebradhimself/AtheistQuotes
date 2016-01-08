@@ -103,6 +103,7 @@ class QuotesBox extends React.Component{
         <div className="center-align col s12 m1">
           <div className="btn btn-success grey darken-1 shadows bottom20 fix-that-width" onClick={this.previousQuote}>Previous</div>
           <div className="btn btn-success grey darken-1 shadows bottom20 fix-that-width" onClick={this.nextQuote}>Next</div>
+          {favorite_icon}
         </div>
         <div className="center-align offset-m1 col s12 m2">
           {ad}
