@@ -12,18 +12,28 @@ class PagesController < ApplicationController
   end
 
   def getQuotes
-    render json: Quote.all.order(:id)
+    favorites = []
+    if current_user
+      favorites = current_user.quotefavorites
+    end
+    render json: {quotes: Quote.all.order(:id), favorites: favorites, user: current_user.present?}
   end
 
-  def formatQuote
-    quote = params[:quote].split
-    if quote.last.include? '-'
-      quote[quote.count - 1] = quote[quote.count - 1].gsub('-', "<br><br>-")
-    elsif quote[quote.count - 2].include? '-'
-      quote[quote.count - 2] = quote[quote.count - 2].gsub('-', "<br><br>-")
+  def favoriting
+    checked = true;
+    if current_user.quotefavorites.pluck(:quote_id).include?(params[:id].to_i)
+      Quotefavorite.where(quote_id: params[:id]).first.destroy
+      checked = false
     else
-      quote[quote.count - 3] = quote[quote.count - 3].gsub('-', "<br><br>-")
+      Quotefavorite.create(user_id: current_user.id, quote_id: params[:id])
+      checked = true
     end
-   render json: quote.join(' ').html_safe
+    render json: {checked: checked}
   end
+
+  def check_favorite
+    checked = current_user.quotefavorites.pluck(:quote_id).include?(params[:id].to_i)
+    render json: {checked: checked}
+  end
+
 end

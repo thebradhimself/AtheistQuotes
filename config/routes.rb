@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   resources :addquote
   root 'pages#index'
   get '/allquotes' => 'pages#allquotes'
   get '/atheismapp' => 'pages#app'
   get '/addquote/quotes_added' => 'addquote#quotes_added'
   get '/getQuotes' => 'pages#getQuotes'
+  get '/favoriting' => 'pages#favoriting'
+  get '/check_favorite' => 'pages#check_favorite'
 
 end

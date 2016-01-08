@@ -1,10 +1,12 @@
 class QuotesBox extends React.Component{
   constructor(props){
     super(props);
-    this.state = {quotes: [], num: Math.floor((Math.random() * 1905) + 1)};
+    this.state = {favorited: false, quotes: [], favorites: [], num: Math.floor((Math.random() * 1905) + 1)};
     this.nextQuote = this.nextQuote.bind(this);
     this.previousQuote = this.previousQuote.bind(this);
-    this.formatQuote = this.formatQuote.bind(this);
+    this.favoriteIt = this.favoriteIt.bind(this);
+    this.checkFavorite = this.checkFavorite.bind(this);
+    this.signin = this.signin.bind(this);
   }
   componentWillMount(){
     $.ajax({
@@ -12,7 +14,7 @@ class QuotesBox extends React.Component{
       method: 'GET',
       dataType: 'JSON',
     }).success(data => {
-      this.setState({quotes: data});
+      this.setState({...data});
     });
   }
 
@@ -20,13 +22,25 @@ class QuotesBox extends React.Component{
     (adsbygoogle = window.adsbygoogle || []).push({});
   }
 
+  favoriteIt(){
+    $.ajax({
+      url: '/favoriting',
+      method: 'GET',
+      dataType: 'JSON',
+      data: {id: this.state.quotes[this.state.num].id},
+    }).success(data => {
+      this.setState({favorited: data.checked});
+    });
+
+  }
+
   nextQuote(e){
     e.preventDefault();
     if(this.state.num + 1 < this.state.quotes.length)
       this.setState({num: this.state.num + 1});
-    else {
+    else
       this.setState({num: 0});
-    }
+    this.checkFavorite(this.state.num + 1);
   }
 
   previousQuote(e){
@@ -36,37 +50,45 @@ class QuotesBox extends React.Component{
     else {
       this.setState({num: this.state.num - 1});
     }
+    this.checkFavorite(this.state.num - 1);
+
   }
 
-  formatQuote(quote){
-    let quote2 = ""
+  checkFavorite(num){
+    let quoteId = this.state.quotes[num].id;
     $.ajax({
-      url: '/formatQuote',
-      method: 'GET',
+      url: '/check_favorite',
+      type: 'GET',
       dataType: 'JSON',
-      data: { quote: quote }
+      data: {id: quoteId},
     }).success(data => {
-      debugger;
-    }).fail(err => {
-      debugger;
-    });
+      this.setState({favorited: data.checked})
+    })
+  }
+
+  signin(){
+    alert('Sign up or Login for the ability to favorite quotes!');
   }
 
   render(){
+    let favorited = false;
     let quote = ""
     if(this.state.quotes[this.state.num]){
       quote = this.state.quotes[this.state.num].the_quote
     }
     let ad = (
             <ins
-               className="adsbygoogle"
-               style={{display:'inline-block;', width:'200px;', height:'400px;'}}
+               className="adsbygoogle sides75"
+               style={{display:'inline-block', width:'200px', height:'400px'}}
                data-ad-client="ca-pub-5362989041036391"
                data-ad-slot="9076806811"
                data-ad-format="auto">
              </ins>
            )
-
+    let favorite_icon = (<i className="fa fa-heart-o fa-3x" onClick={this.signin}></i>)
+    if(this.state.user){
+      favorite_icon = this.state.favorited ? (<i className="fa fa-heart fa-3x" onClick={this.favoriteIt}></i>) : (<i className="fa fa-heart-o fa-3x" onClick={this.favoriteIt}></i>)
+    }
     return(
       <div className="row">
         <div className="col m6">

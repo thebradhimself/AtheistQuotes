@@ -12,13 +12,23 @@
   <div class="container">
     <nav style="margin-bottom: 5%;">
       <div class="nav-wrapper green" style="margin-top: 3%;">
-        <a href="#" class="brand-logo right">Atheist Quotes</a>
+        <a href="#" class="brand-logo center">Atheist Quotes</a>
         <a href="#" data-activates="mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
         <ul id="nav-mobile" class="left hide-on-med-and-down">
           <li><a href="/">Home</a></li>
           <li><a href="/addquote">Add Quote</a></li>
           <li><a href="/allquotes">See All Quotes</a></li>
         </ul>
+        <% if current_user %>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+        </ul>
+        <% else %>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><%= link_to "Login", new_user_session_path %></li>
+            <li><%= link_to "Signup", new_user_registration_path %></li>
+          </ul>
+        <% end %>
         <ul class="side-nav" id="mobile">
           <li><a href="/">Home</a></li>
           <li><a href="/addquote">Add Quote</a></li>
