@@ -22,7 +22,7 @@ class PagesController < ApplicationController
   def favoriting
     checked = true;
     if current_user.quotefavorites.pluck(:quote_id).include?(params[:id].to_i)
-      Quotefavorite.where(quote_id: params[:id]).first.destroy
+      Quotefavorite.where(quote_id: params[:id], user_id: current_user.id).first.destroy
       checked = false
     else
       Quotefavorite.create(user_id: current_user.id, quote_id: params[:id])
