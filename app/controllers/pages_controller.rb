@@ -45,7 +45,7 @@ class PagesController < ApplicationController
   end
 
   def removeFavorite
-    Quotefavorite.where(quote_id: params[:id]).first.destroy
+    Quotefavorite.where(quote_id: params[:id], user_id: current_user.id).first.destroy
     render json: {favorites: current_user.quotefavorites}
   end
 
