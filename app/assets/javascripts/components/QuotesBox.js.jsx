@@ -78,7 +78,7 @@ class QuotesBox extends React.Component{
     }
     let ad = (
             <ins
-               className="adsbygoogle sides75"
+               className="adsbygoogle"
                style={{display:'inline-block', width:'200px', height:'400px'}}
                data-ad-client="ca-pub-5362989041036391"
                data-ad-slot="9076806811"
@@ -91,21 +91,22 @@ class QuotesBox extends React.Component{
     }
     return(
       <div className="row">
-        <div className="col m6">
+        <div className="col m6 center-align">
           <div className="row center-align">
-            <div className="special center-align" dangerouslySetInnerHTML={{__html: quote }}></div>
+            <div className="special center-align" dangerouslySetInnerHTML={{__html: quote }}>
+            </div>
           </div>
-          <div className="center-align">
             <a href="https://itunes.apple.com/us/app/atheist-quotes./id392507328?mt=8"><img className="app-buttons" src="http://www.atheist-quotes.com/assets/download_on_app_store_badge-cdd21a520305761890b1da6e15d6151e41d57064668b0deee6bef30e714bc4c9.png"/></a>
             <a href="https://play.google.com/store/apps/details?id=com.leftblank.atheistquotes"><img className="app-buttons" src="http://www.atheist-quotes.com/assets/get-it-on-google-play-583b7d95966b951ab801b5d4651ed5eca6663e749dceabacc992b3546b2f46ef.png"/></a>
+        </div>
+        <div className="center-align col s12 m3">
+          <div className="btn btn-success grey darken-1 shadows fix-that-width" onClick={this.previousQuote}>Previous</div>
+          <div className="btn btn-success grey darken-1 shadows fix-that-width" onClick={this.nextQuote}>Next</div>
+          <div className="row">
+            {favorite_icon}
           </div>
         </div>
-        <div className="center-align col s12 m1">
-          <div className="btn btn-success grey darken-1 shadows bottom20 fix-that-width" onClick={this.previousQuote}>Previous</div>
-          <div className="btn btn-success grey darken-1 shadows bottom20 fix-that-width" onClick={this.nextQuote}>Next</div>
-          {favorite_icon}
-        </div>
-        <div className="center-align offset-m1 col s12 m2">
+        <div className="center-align col s12 m3">
           {ad}
         </div>
       </div>

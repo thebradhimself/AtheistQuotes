@@ -12,7 +12,6 @@
   <div class="container">
     <nav style="margin-bottom: 5%;">
       <div class="nav-wrapper green" style="margin-top: 3%;">
-
         <a href="#" data-activates="mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
         <ul id="nav-mobile" class="left hide-on-med-and-down">
           <li><a href="/">Home</a></li>
@@ -44,11 +43,10 @@
           <% else %>
             <li><%= link_to "Login", new_user_session_path %></li>
             <li><%= link_to "Signup", new_user_registration_path %></li>
-        <% end %>
-      </ul>
+          <% end %>
+        </ul>
       </div>
     </nav>
-
     <%= yield %>
     <div class='row'>
       <footer>
