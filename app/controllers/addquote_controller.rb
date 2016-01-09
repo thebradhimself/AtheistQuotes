@@ -21,6 +21,10 @@ class AddquoteController < ApplicationController
     redirect_to root_path
   end
 
+  def destroy
+    binding.pry
+  end
+
   private
   def quote_params
     params.require(:add_quote).permit(:quote, :author)

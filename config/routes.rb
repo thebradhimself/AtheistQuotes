@@ -9,5 +9,8 @@ Rails.application.routes.draw do
   get '/getQuotes' => 'pages#getQuotes'
   get '/favoriting' => 'pages#favoriting'
   get '/check_favorite' => 'pages#check_favorite'
+  get '/favorites' => 'pages#favorites'
+  get '/getFavoriteQuote' => 'pages#getFavoriteQuote'
+  get '/removeFavorite' => 'pages#removeFavorite'
 
 end

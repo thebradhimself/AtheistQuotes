@@ -31,9 +31,22 @@ class PagesController < ApplicationController
     render json: {checked: checked}
   end
 
+  def favorites
+    @favs = current_user.quotefavorites
+  end
+
   def check_favorite
     checked = current_user.quotefavorites.pluck(:quote_id).include?(params[:id].to_i)
     render json: {checked: checked}
+  end
+
+  def getFavoriteQuote
+    render json: {quote: Quote.find(params[:id]).the_quote}
+  end
+
+  def removeFavorite
+    Quotefavorite.where(quote_id: params[:id]).first.destroy
+    render json: {favorites: current_user.quotefavorites}
   end
 
 end
