@@ -1,4 +1,4 @@
-This can be found line at Atheist-Quotes.com 
+This can be found online at http://www.Atheist-Quotes.com 
 
 
 I'm learning ReactJS and this site is what I am using to test my new skills.  
