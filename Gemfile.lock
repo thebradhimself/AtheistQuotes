@@ -20,6 +20,8 @@ GEM
       erubis (~> 2.7.0)
       rails-dom-testing (~> 1.0, >= 1.0.5)
       rails-html-sanitizer (~> 1.0, >= 1.0.1)
+    active_model_serializers (0.9.5)
+      activemodel (>= 3.2)
     activejob (4.2.1)
       activesupport (= 4.2.1)
       globalid (>= 0.3.0)
@@ -113,6 +115,7 @@ GEM
     puma (2.11.3)
       rack (>= 1.1, < 2.0)
     rack (1.6.1)
+    rack-cors (0.4.0)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.2.1)
@@ -193,6 +196,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_model_serializers (~> 0.9.3)
   bootstrap-sass (~> 3.3.5)
   byebug
   coffee-rails (~> 4.1.0)
@@ -205,6 +209,7 @@ DEPENDENCIES
   postgres-copy
   pry
   puma
+  rack-cors
   rails (= 4.2.1)
   rails_12factor
   react-rails (~> 1.5.0)
