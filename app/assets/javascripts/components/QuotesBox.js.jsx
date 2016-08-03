@@ -98,8 +98,8 @@ class QuotesBox extends React.Component{
               </div>
             </div>
             <div>
-              <a href="https://itunes.apple.com/us/app/atheist-quotes./id392507328?mt=8"><img className="app-buttons" src="http://www.atheist-quotes.com/assets/download_on_app_store_badge-cdd21a520305761890b1da6e15d6151e41d57064668b0deee6bef30e714bc4c9.png"/></a>
-              <a href="https://play.google.com/store/apps/details?id=com.leftblank.atheistquotes"><img className="app-buttons2" src="http://www.atheist-quotes.com/assets/get-it-on-google-play-583b7d95966b951ab801b5d4651ed5eca6663e749dceabacc992b3546b2f46ef.png"/></a>
+              <a href="https://itunes.apple.com/us/app/atheist-quotes./id392507328?mt=8"><img className="app-buttons" src="/assets/download_on_app_store_badge.png"/></a>
+              <a href="https://play.google.com/store/apps/details?id=com.leftblank.atheistquotes"><img className="app-buttons2" src="/assets/get-it-on-google-play.png"/></a>
             </div>
             <div>
               <br></br>
