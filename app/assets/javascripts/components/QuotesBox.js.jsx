@@ -76,15 +76,16 @@ class QuotesBox extends React.Component{
     if(this.state.quotes[this.state.num]){
       quote = this.state.quotes[this.state.num].the_quote
     }
-    let ad = (
-            <ins
-               className="adsbygoogle"
-               style={{display:'inline-block', width:'200px', height:'400px'}}
-               data-ad-client="ca-pub-5362989041036391"
-               data-ad-slot="9076806811"
-               data-ad-format="auto">
-             </ins>
-           )
+    // let ad = (
+    //         <ins
+    //            className="adsbygoogle"
+    //            style={{display:'inline-block', width:'200px', height:'400px'}}
+    //            data-ad-client="ca-pub-5362989041036391"
+    //            data-ad-slot="9076806811"
+    //            data-ad-format="auto">
+    //          </ins>
+    //        )
+    let ad = ""
     let favorite_icon = (<i className="fa fa-heart-o fa-3x" onClick={this.signin}></i>)
     if(this.state.user){
       favorite_icon = this.state.favorited ? (<i className="fa fa-heart fa-3x" onClick={this.favoriteIt}></i>) : (<i className="fa fa-heart-o fa-3x" onClick={this.favoriteIt}></i>)
@@ -101,11 +102,7 @@ class QuotesBox extends React.Component{
               <a href="https://itunes.apple.com/us/app/atheist-quotes./id392507328?mt=8"><img className="app-buttons" src="/assets/download_on_app_store_badge.png"/></a>
               <a href="https://play.google.com/store/apps/details?id=com.leftblank.atheistquotes"><img className="app-buttons2" src="/assets/get-it-on-google-play.png"/></a>
             </div>
-            <div>
-              <br></br>
-              <a href="https://teespring.com/hidden-atheist-shirt"><img className="" height="200" src="/assets/shirt.png"/></a>
-              <a href="https://teespring.com/hidden-atheist-shirt"><h6>Get this Atheist shirt for a limited time!</h6></a>
-            </div>
+
           </div>
           <div className="center-align col s12 m3">
             <div className="btn btn-success grey darken-1 shadows fix-that-width" onClick={this.previousQuote}>Previous</div>
@@ -116,6 +113,11 @@ class QuotesBox extends React.Component{
           </div>
           <div className="center-align col s12 m3">
             {ad}
+            <div>
+              <br></br>
+              <a href="https://teespring.com/hidden-atheist-shirt"><img className="" height="120" src="/assets/shirt.png"/></a>
+              <a href="https://teespring.com/hidden-atheist-shirt"><h6>Get this Atheist shirt for a limited time!</h6></a>
+            </div>
           </div>
         </div>
       </div>
