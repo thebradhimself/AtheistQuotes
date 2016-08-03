@@ -116,7 +116,7 @@ class QuotesBox extends React.Component{
             <div>
               <br></br>
               <a href="https://teespring.com/hidden-atheist-shirt"><img className="" height="120" src="/assets/shirt.png"/></a>
-              <a href="https://teespring.com/hidden-atheist-shirt"><h6>Get this Atheist shirt for a limited time!</h6></a>
+              <a href="https://teespring.com/hidden-atheist-shirt"><h6>Support the site and buy an Atheist shirt.  <br></br>Only available for a limited time!</h6></a>
             </div>
           </div>
         </div>
