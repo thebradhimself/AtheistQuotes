@@ -43,8 +43,7 @@ class CRBox extends React.Component{
 
       <div>
         <div>{pass}</div>
-        <div>{ad2}{ad2}{ad2}{ad2}{ad2}</div>
+        <div>{ad2}</div>
       </div>);
-
   }
 }
