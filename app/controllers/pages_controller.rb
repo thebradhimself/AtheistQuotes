@@ -49,4 +49,7 @@ class PagesController < ApplicationController
     render json: {favorites: current_user.quotefavorites}
   end
 
+  def crpass
+  end
+
 end

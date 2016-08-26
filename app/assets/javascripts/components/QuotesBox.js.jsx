@@ -84,7 +84,7 @@ class QuotesBox extends React.Component{
                data-ad-slot="9076806811"
                data-ad-format="auto">
              </ins>
-           )
+           );
     let favorite_icon = (<i className="fa fa-heart-o fa-3x" onClick={this.signin}></i>)
     if(this.state.user){
       favorite_icon = this.state.favorited ? (<i className="fa fa-heart fa-3x" onClick={this.favoriteIt}></i>) : (<i className="fa fa-heart-o fa-3x" onClick={this.favoriteIt}></i>)
