@@ -7,8 +7,18 @@ class PagesController < ApplicationController
   def app
   end
 
+  def admin
+    @quotes = AddQuote.all
+  end
+
   def allquotes
     @quotes = Quote.all.order(:id)
+  end
+
+  def update
+    quote = Quote.find(params[:id])
+    quote.update(the_quote: params[:quote])
+    render json: {quote: quote}, status: 200
   end
 
   def getQuotes

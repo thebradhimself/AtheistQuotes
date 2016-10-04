@@ -2,10 +2,15 @@
 <div class='col-lg-8'>
   <table class='bordered hoverable'>
   <% @quotes.each do |quote| %>
-  <tr>
-    <td><%= quote.id %></td>
-    <td><%= quote.the_quote.html_safe  %><br><br></td>
-  </tr>
+    <tr>
+      <td>
+        <% if current_user.admin %>
+          <%= react_component 'AllQuotes', {quote: quote.the_quote.html_safe, quote_id: quote.id } %>
+        <% else %>
+          <%= react_component 'AllQuotesnoAdmin', {quote: quote.the_quote.html_safe, quote_id: quote.id } %>
+        <% end %>
+      </td>
+    </tr>
   <% end %>
   </table>
 </div>
