@@ -109,7 +109,7 @@ class QuotesBox extends React.Component{
             <div className="row">
               {favorite_icon}
               <a href={`https://twitter.com/intent/tweet?text=${quote}`} target="blank">
-                <i className="fa fa-twitter fa-3x" onClick={this.shareToTwitter}></i>
+                <i className="fa fa-twitter fa-3x"></i>
               </a>
             </div>
           </div>
