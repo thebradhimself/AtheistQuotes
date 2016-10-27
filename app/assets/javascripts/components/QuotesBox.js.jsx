@@ -108,6 +108,9 @@ class QuotesBox extends React.Component{
             <div className="btn btn-success grey darken-1 shadows fix-that-width" onClick={this.nextQuote}>Next</div>
             <div className="row">
               {favorite_icon}
+              <a href={`https://twitter.com/intent/tweet?text=${quote}`} target="blank">
+                <i className="fa fa-twitter fa-3x" onClick={this.shareToTwitter}></i>
+              </a>
             </div>
           </div>
           <div className="center-align col s12 m3">
