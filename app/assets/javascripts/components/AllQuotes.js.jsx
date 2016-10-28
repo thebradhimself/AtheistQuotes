@@ -37,7 +37,7 @@ class AllQuotes extends React.Component{
       return(
         <div>
           <div dangerouslySetInnerHTML={{__html: this.state.quote }}></div>
-          <button onClick={this.handleEdit}>Edit</button>
+          <button className="btn red" onClick={this.handleEdit}>Edit</button>
 
         </div>
       );
