@@ -7,6 +7,7 @@ class QuotesBox extends React.Component{
     this.favoriteIt = this.favoriteIt.bind(this);
     this.checkFavorite = this.checkFavorite.bind(this);
     this.signin = this.signin.bind(this);
+    this.twitterShare = this.twitterShare.bind(this);
   }
   componentWillMount(){
     $.ajax({
@@ -70,6 +71,10 @@ class QuotesBox extends React.Component{
     alert('Sign up or Login for the ability to favorite quotes!');
   }
 
+  twitterShare(quote){
+  	window.open("https://twitter.com/intent/tweet?text=" + "/" + quote);
+  }
+
   render(){
     let favorited = false;
     let quote = ""
@@ -85,6 +90,7 @@ class QuotesBox extends React.Component{
                data-ad-format="auto">
              </ins>
            );
+    let twitter_icon = (<i className="fa fa-twitter fa-3x" onClick={this.twitterShare(quote)}></i>)
     let favorite_icon = (<i className="fa fa-heart-o fa-3x" onClick={this.signin}></i>)
     if(this.state.user){
       favorite_icon = this.state.favorited ? (<i className="fa fa-heart fa-3x" onClick={this.favoriteIt}></i>) : (<i className="fa fa-heart-o fa-3x" onClick={this.favoriteIt}></i>)
@@ -108,6 +114,9 @@ class QuotesBox extends React.Component{
             <div className="btn btn-success grey darken-1 shadows fix-that-width" onClick={this.nextQuote}>Next</div>
             <div className="row">
               {favorite_icon}
+            </div>
+            <div className="row">
+              {twitter_icon}
             </div>
           </div>
           <div className="center-align col s12 m3">
