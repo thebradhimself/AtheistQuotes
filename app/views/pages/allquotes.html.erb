@@ -4,10 +4,14 @@
   <% @quotes.each do |quote| %>
     <tr>
       <td>
-        <% if current_user.admin %>
-          <%= react_component 'AllQuotes', {quote: quote.the_quote.html_safe, quote_id: quote.id } %>
-        <% else %>
-          <%= react_component 'AllQuotesnoAdmin', {quote: quote.the_quote.html_safe, quote_id: quote.id } %>
+        <% if current_user %>
+          <% if current_user.admin%>
+            <%= react_component 'AllQuotes', {quote: quote.the_quote.html_safe, quote_id: quote.id } %>
+          <% else %>
+            <%= react_component 'AllQuotesnoAdmin', {quote: quote.the_quote.html_safe, quote_id: quote.id } %>
+          <% end %>
+          <% else %>
+            <%= react_component 'AllQuotesnoAdmin', {quote: quote.the_quote.html_safe, quote_id: quote.id } %>
         <% end %>
       </td>
     </tr>
