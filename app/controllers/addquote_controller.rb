@@ -22,7 +22,6 @@ class AddquoteController < ApplicationController
   end
 
   def destroy
-    binding.pry
   end
 
   private
