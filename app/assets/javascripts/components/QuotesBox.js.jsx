@@ -85,7 +85,7 @@ class QuotesBox extends React.Component{
     //            data-ad-format="auto">
     //          </ins>
     //        );
-    let ad = (<span><a href="http://www.teespring.com/TrexEatingFish"><img className="maxshirt" src="/assets/front.jpg"/></a><div>Trex eating Jesus Fish on sale for a limited time</div></span>)
+    let ad = (<span><a href="http://www.teespring.com/TrexEatingFish"><img className="maxshirt" src="/assets/front.jpg"/></a><div>Trex eating Jesus Fish for sale for a limited time</div></span>)
     let favorite_icon = (<i className="fa fa-heart-o fa-3x" onClick={this.signin}></i>)
     if(this.state.user){
       favorite_icon = this.state.favorited ? (<i className="fa fa-heart fa-3x" onClick={this.favoriteIt}></i>) : (<i className="fa fa-heart-o fa-3x" onClick={this.favoriteIt}></i>)
