@@ -42,6 +42,8 @@ gem 'devise'
 #super rad fonts and shit
 gem "font-awesome-rails"
 
+# gem 'rack-cors', :require => 'rack/cors'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -68,4 +70,4 @@ group :development, :test do
 
 end
 
-ruby "2.2.2"
+ruby "2.3.1"
