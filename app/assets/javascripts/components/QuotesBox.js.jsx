@@ -1,7 +1,7 @@
 class QuotesBox extends React.Component{
   constructor(props){
     super(props);
-    this.state = {favorited: false, quotes: [], favorites: [], num: Math.floor((Math.random() * 1905) + 1), shirt: (Math.floor(Math.random() * 7) + 1 )}
+    this.state = {favorited: false, quotes: [], favorites: [], num: Math.floor((Math.random() * 1905) + 1)}
     this.nextQuote = this.nextQuote.bind(this);
     this.previousQuote = this.previousQuote.bind(this);
     this.favoriteIt = this.favoriteIt.bind(this);
@@ -85,12 +85,11 @@ class QuotesBox extends React.Component{
                data-ad-format="auto">
              </ins>
            );
-           {(Math.floor(Math.random() * 7) + 1 )}
   // let ad = (<span><a href="https://teespring.com/stores/programming-apparel"><img className="maxshirt" src={"/assets/shirt" + this.state.shirt + ".jpg" }/></a><div></div></span>)
-  //   let favorite_icon = (<i className="fa fa-heart-o fa-3x" onClick={this.signin}></i>)
-  //   if(this.state.user){
-  //     favorite_icon = this.state.favorited ? (<i className="fa fa-heart fa-3x" onClick={this.favoriteIt}></i>) : (<i className="fa fa-heart-o fa-3x" onClick={this.favoriteIt}></i>)
-  //   }
+    let favorite_icon = (<i className="fa fa-heart-o fa-3x" onClick={this.signin}></i>)
+    if(this.state.user){
+      favorite_icon = this.state.favorited ? (<i className="fa fa-heart fa-3x" onClick={this.favoriteIt}></i>) : (<i className="fa fa-heart-o fa-3x" onClick={this.favoriteIt}></i>)
+    }
     return(
       <div>
         <div className="row">
