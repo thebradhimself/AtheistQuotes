@@ -76,21 +76,21 @@ class QuotesBox extends React.Component{
     if(this.state.quotes[this.state.num]){
       quote = this.state.quotes[this.state.num].the_quote
     }
-    // let ad = (
-    //         <ins
-    //            className="adsbygoogle"
-    //            style={{display:'inline-block', width:'200px', height:'400px'}}
-    //            data-ad-client="ca-pub-5362989041036391"
-    //            data-ad-slot="9076806811"
-    //            data-ad-format="auto">
-    //          </ins>
-    //        );
-    //        {(Math.floor(Math.random() * 7) + 1 )}
-  let ad = (<span><a href="https://teespring.com/stores/programming-apparel"><img className="maxshirt" src={"/assets/shirt" + this.state.shirt + ".jpg" }/></a><div></div></span>)
-    let favorite_icon = (<i className="fa fa-heart-o fa-3x" onClick={this.signin}></i>)
-    if(this.state.user){
-      favorite_icon = this.state.favorited ? (<i className="fa fa-heart fa-3x" onClick={this.favoriteIt}></i>) : (<i className="fa fa-heart-o fa-3x" onClick={this.favoriteIt}></i>)
-    }
+    let ad = (
+            <ins
+               className="adsbygoogle"
+               style={{display:'inline-block', width:'200px', height:'400px'}}
+               data-ad-client="ca-pub-5362989041036391"
+               data-ad-slot="9076806811"
+               data-ad-format="auto">
+             </ins>
+           );
+           {(Math.floor(Math.random() * 7) + 1 )}
+  // let ad = (<span><a href="https://teespring.com/stores/programming-apparel"><img className="maxshirt" src={"/assets/shirt" + this.state.shirt + ".jpg" }/></a><div></div></span>)
+  //   let favorite_icon = (<i className="fa fa-heart-o fa-3x" onClick={this.signin}></i>)
+  //   if(this.state.user){
+  //     favorite_icon = this.state.favorited ? (<i className="fa fa-heart fa-3x" onClick={this.favoriteIt}></i>) : (<i className="fa fa-heart-o fa-3x" onClick={this.favoriteIt}></i>)
+  //   }
     return(
       <div>
         <div className="row">
