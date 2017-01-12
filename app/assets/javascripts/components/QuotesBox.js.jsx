@@ -73,8 +73,10 @@ class QuotesBox extends React.Component{
   render(){
     let favorited = false;
     let quote = ""
+    let author = ""
     if(this.state.quotes[this.state.num]){
-      quote = this.state.quotes[this.state.num].the_quote
+      quote = this.state.quotes[this.state.num].quote
+      author = this.state.quotes[this.state.num].author
     }
     let ad = (
             <ins
@@ -95,7 +97,9 @@ class QuotesBox extends React.Component{
         <div className="row">
           <div className="col m6 center-align">
             <div className="row center-align">
-              <div className="special center-align" dangerouslySetInnerHTML={{__html: quote }}>
+              <div className="special center-align">
+                {quote}
+                <p><a href={'/author?author=' + author} className="author">{author}</a></p>
               </div>
             </div>
             <div>

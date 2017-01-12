@@ -3,7 +3,7 @@ class AllQuotes extends React.Component{
     super(props);
     this.handleEdit = this.handleEdit.bind(this);
     this.handleUpdate = this.handleUpdate.bind(this);
-    this.state = {edit_mode: false, quote: this.props.quote}
+    this.state = {edit_mode: false, quote: this.props.quote, author: this.props.author}
   }
 
   handleEdit(){
@@ -15,9 +15,9 @@ class AllQuotes extends React.Component{
       url: '/update',
       method: 'POST',
       dataType: 'JSON',
-      data: {id: this.props.quote_id, quote: ReactDOM.findDOMNode(this.refs.quoted_quote).value }
+      data: {id: this.props.quote_id, quote: ReactDOM.findDOMNode(this.refs.quoted_quote).value, author:  ReactDOM.findDOMNode(this.refs.authored_author).value }
     }).success(data => {
-      this.setState({ edit_mode: !this.state.edit_mode, quote: data.quote.the_quote })
+      this.setState({ edit_mode: !this.state.edit_mode, quote: data.quote.quote, author: data.quote.author })
     }).fail(data => {
       console.log(data);
     })
@@ -29,6 +29,7 @@ class AllQuotes extends React.Component{
       return(
         <div>
           <input ref="quoted_quote" defaultValue={this.state.quote }></input>
+          <input ref="authored_author" defaultValue={this.state.author}></input>
           <button onClick={this.handleUpdate}>Save</button>
         </div>
       );
@@ -36,9 +37,9 @@ class AllQuotes extends React.Component{
     else{
       return(
         <div>
-          <div dangerouslySetInnerHTML={{__html: this.state.quote }}></div>
+          <p>{this.state.quote}</p>
+          <div>{this.state.author}</div>
           <button onClick={this.handleEdit}>Edit</button>
-
         </div>
       );
     }

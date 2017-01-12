@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   get '/removeFavorite' => 'pages#removeFavorite'
   get '/iamgod' => 'pages#admin'
   post 'update' => 'pages#update'
+  get '/author' => 'pages#author'
+  get '/authors' => 'pages#authors'
 
   namespace :api, defaults: {format: 'json'} do
     namespace :v1 do

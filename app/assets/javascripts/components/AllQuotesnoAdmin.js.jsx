@@ -6,7 +6,8 @@ class AllQuotesnoAdmin extends React.Component{
   render(){
     return(
       <div>
-        <div dangerouslySetInnerHTML={{__html: this.props.quote }}></div>
+        <p>{this.props.quote}</p>
+        <div><a href={"/author?author=" + this.props.author}>{this.props.author}</a></div>
       </div>
     );
   }

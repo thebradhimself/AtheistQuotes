@@ -42,6 +42,12 @@ gem 'devise'
 #super rad fonts and shit
 gem "font-awesome-rails"
 
+gem "slim-rails"
+
+#pagination
+gem 'kaminari'
+
+
 # gem 'rack-cors', :require => 'rack/cors'
 
 # Use ActiveModel has_secure_password

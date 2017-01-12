@@ -1,0 +1,9 @@
+h1
+  | Authors
+hr
+.row
+  - @authors.each do |a|
+    .col.m3
+      a href="/author?author=#{a}"
+        = a
+  br

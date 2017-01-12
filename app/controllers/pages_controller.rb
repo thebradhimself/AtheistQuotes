@@ -12,12 +12,12 @@ class PagesController < ApplicationController
   end
 
   def allquotes
-    @quotes = Quote.all.order(:id)
+    @quotes = Quote.all.order(:id).page(params[:page])
   end
 
   def update
     quote = Quote.find(params[:id])
-    quote.update(the_quote: params[:quote])
+    quote.update(quote: params[:quote], author: params[:author])
     render json: {quote: quote}, status: 200
   end
 
@@ -51,7 +51,7 @@ class PagesController < ApplicationController
   end
 
   def getFavoriteQuote
-    render json: {quote: Quote.find(params[:id]).the_quote}
+    render json: {quote: Quote.find(params[:id])}
   end
 
   def removeFavorite
@@ -60,6 +60,14 @@ class PagesController < ApplicationController
   end
 
   def crpass
+  end
+
+  def author
+    @quotes = Quote.where(author: params[:author]).page(params[:page])
+  end
+
+  def authors
+    @authors = Quote.all.order(:author).pluck(:author).uniq
   end
 
 end

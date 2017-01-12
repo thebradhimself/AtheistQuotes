@@ -17,7 +17,7 @@ class Favorite extends React.Component{
 
   render(){
     return(
-      <tr><td dangerouslySetInnerHTML={{__html: this.state.quote }}></td><td><i className="fa fa-heart fa-2x" onClick={() => this.props.removeFavorite(this.props.favorite.quote_id)}></i></td></tr>
+      <tr><td>{this.state.quote.quote} <br></br><br></br>{this.state.quote.author}</td><td><i className="fa fa-heart fa-2x" onClick={() => this.props.removeFavorite(this.props.favorite.quote_id)}></i></td></tr>
     );
   }
 

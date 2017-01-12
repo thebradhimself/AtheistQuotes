@@ -1,0 +1,24 @@
+.row
+  h1.page-header.center-align.the-head All quotes in database
+.row
+  .col.m10
+    table.bordered.hoverable
+      - @quotes.each do |quote|
+        tr
+          td
+            - if current_user
+              - if current_user.admin
+                = react_component 'AllQuotes', {quote: quote.quote, author: quote.author, quote_id: quote.id }
+              - else
+                = react_component 'AllQuotesnoAdmin', {quote: quote.quote, author: quote.author, quote_id: quote.id }
+            - else
+              = react_component 'AllQuotesnoAdmin', {quote: quote.quote, author: quote.author, quote_id: quote.id }
+    = paginate @quotes
+  .col.m2
+    script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" 
+    /! weLoveAtheism2
+    ins.adsbygoogle data-ad-client="ca-pub-5362989041036391" data-ad-slot="4671044015" style="display:inline-block;width:120px;height:600px" 
+    javascript:
+      (adsbygoogle = window.adsbygoogle || []).push({});
+ 
+
