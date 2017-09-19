@@ -122,11 +122,11 @@ GEM
     mini_portile2 (2.1.0)
     minitest (5.10.1)
     multi_json (1.12.1)
-    mysql2 (0.4.6)
     nio4r (2.0.0)
     nokogiri (1.7.1)
       mini_portile2 (~> 2.1.0)
     orm_adapter (0.5.0)
+    pg (0.21.0)
     pry (0.10.4)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -236,7 +236,7 @@ DEPENDENCIES
   jquery-rails
   kaminari
   materialize-sass
-  mysql2
+  pg
   pry
   puma
   rack-cors
