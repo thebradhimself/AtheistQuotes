@@ -2,6 +2,10 @@ class PagesController < ApplicationController
 
   def index
     @quotes = Quote.all
+    respond_to do |format|
+      format.html
+      format.csv
+    end
   end
 
   def app

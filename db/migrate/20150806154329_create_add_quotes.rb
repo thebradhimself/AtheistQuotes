@@ -1,4 +1,4 @@
-class CreateAddQuotes < ActiveRecord::Migration
+class CreateAddQuotes < ActiveRecord::Migration[5.1]
   def change
     create_table :add_quotes do |t|
       t.string :quote, null: false

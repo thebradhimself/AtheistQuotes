@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
-  devise_for :users
-  resources :addquote
   root 'pages#index'
+  resources :addquote
+  devise_for :users
   get '/allquotes' => 'pages#allquotes'
   get '/atheismapp' => 'pages#app'
   get '/addquote/quotes_added' => 'addquote#quotes_added'
