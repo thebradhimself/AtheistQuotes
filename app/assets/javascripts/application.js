@@ -13,13 +13,29 @@
 //= require jquery
 //= require materialize-sprockets
 //= require jquery_ujs
-//= require react
-//= require react_ujs
-//= require components
 //= require_tree .
 
 $(document).ready(function(){
 
   $(".button-collapse").sideNav();
-  
+
+  $(".favorite-quote").click(function(){
+    that = this
+    if($(that).data('user') == false){
+      alert('Login/Signup to favorite!')
+      return;
+    }
+    $.ajax({
+      url: '/favoriting',
+      method: 'GET',
+      dataType: 'JSON',
+      data: {id: $(that).data('id')}
+    }).success(data => {
+      if(data.checked)
+        $(that).removeClass('fa-heart-o').addClass('fa-heart')
+      else
+        $(that).removeClass('fa-heart').addClass('fa-heart-o')
+    })
+  });
+
 });

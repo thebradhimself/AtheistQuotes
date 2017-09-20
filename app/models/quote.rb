@@ -3,5 +3,4 @@ class Quote < ActiveRecord::Base
   has_many :quotefavorites
   has_many :users, through: :quotesfavorites
   serialize :quotes, Hash
-  
 end
