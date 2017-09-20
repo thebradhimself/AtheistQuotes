@@ -1,5 +1,4 @@
 class PagesController < ApplicationController
-  access all: [:index, :authors, :author], user: [:index, :favoriting, :authors, :author, :favoriting, :favorites, :check_favorite], admin: :all
 
   def index
     @quotes = Quote.all.order(:id).page(params[:page])
