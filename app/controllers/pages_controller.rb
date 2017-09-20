@@ -1,11 +1,9 @@
 class PagesController < ApplicationController
+  access all: [:index, :authors, :author], user: [:index, :favoriting, :authors, :author, :favoriting, :favorites, :check_favorite], admin: :all
 
   def index
-    @quotes = Quote.all
-    respond_to do |format|
-      format.html
-      format.csv
-    end
+    @quotes = Quote.all.order(:id).page(params[:page])
+    @favorites = current_user.quotefavorites.pluck(:quote_id) if current_user
   end
 
   def app
