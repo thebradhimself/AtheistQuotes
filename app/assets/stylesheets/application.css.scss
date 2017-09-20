@@ -89,3 +89,15 @@ a.author{
 nav {
   background-color: white;
 }
+
+#quotes-table{
+  background-color: white;
+}
+
+#quotes-table tr{
+  border-top: 1px solid #565656;
+  border-bottom: 1px solid #565656;
+  &:hover{
+    background-color: #c6a3a3;
+  }
+}
