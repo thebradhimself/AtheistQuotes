@@ -31,12 +31,13 @@ $(document).ready(function(){
       url: '/favoriting',
       method: 'GET',
       dataType: 'JSON',
-      data: {id: $(that).data('id')}
-    }).success(data => {
-      if(data.checked)
-        $(that).removeClass('fa-heart-o').addClass('fa-heart')
-      else
-        $(that).removeClass('fa-heart').addClass('fa-heart-o')
-    })
+      data: {id: $(that).data('id')},
+      success: function(data){
+        if(data.checked)
+          $(that).removeClass('fa-heart-o').addClass('fa-heart')
+        else
+          $(that).removeClass('fa-heart').addClass('fa-heart-o')
+      }
+    });
   });
 });
