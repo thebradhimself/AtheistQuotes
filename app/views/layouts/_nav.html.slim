@@ -1,43 +1,43 @@
-nav[style="margin-bottom: 5%;"]
-  .nav-wrapper.green[style="margin-top: 3%;"]
-    a.brand-logo.center[href="/"]
-      | Atheist Quotes
-    a.button-collapse[href="#" data-activates="mobile"]
-      i.mdi-navigation-menu
-    ul#nav-mobile.left.hide-on-med-and-down
-      li
-        a[href="/"]
-          | Home
-      li
-        a[href="/authors"]
-          | Authors
-      - if current_user
-        li
-          a[href="/favorites"]
-            | Favorites
-    - if current_user
-      ul#nav-mobile.right.hide-on-med-and-down
-        li
-          = link_to "Logout", destroy_user_session_path, method: :delete
-    - else
-      ul#nav-mobile.right.hide-on-med-and-down
-        li
-          = link_to "Login", new_user_session_path
-        li
-          = link_to "Signup", new_user_registration_path
-    ul#mobile.side-nav
-      li
-        a[href="/"]
-          | Home
-      - if current_user
-        li
-          a[href="/favorites"]
-            | Favorites
-      - if current_user
-        li
-          = link_to "Logout", destroy_user_session_path, method: :delete
-      - else
-        li
-          = link_to "Login", new_user_session_path
-        li
-          = link_to "Signup", new_user_registration_path
+/nav[style="margin-bottom: 5%;"]
+/  .nav-wrapper.green[style="margin-top: 3%;"]
+/    a.brand-logo.center[href="/"]
+/      | Atheist Quotes
+/    a.button-collapse[href="#" data-activates="mobile"]
+/      i.mdi-navigation-menu
+/    ul#nav-mobile.left.hide-on-med-and-down
+/      li
+/        a[href="/"]
+/          | Home
+/      li
+/        a[href="/authors"]
+/          | Authors
+/      - if current_user
+/        li
+/          a[href="/favorites"]
+/            | Favorites
+/    - if current_user
+/      ul#nav-mobile.right.hide-on-med-and-down
+/        li
+/          = link_to "Logout", destroy_user_session_path, method: :delete
+/    - else
+/      ul#nav-mobile.right.hide-on-med-and-down
+/        li
+/          = link_to "Login", new_user_session_path
+/        li
+/          = link_to "Signup", new_user_registration_path
+/    ul#mobile.side-nav
+/      li
+/        a[href="/"]
+/          | Home
+/      - if current_user
+/        li
+/          a[href="/favorites"]
+/            | Favorites
+/      - if current_user
+/        li
+/          = link_to "Logout", destroy_user_session_path, method: :delete
+/      - else
+/        li
+/          = link_to "Login", new_user_session_path
+/        li
+/          = link_to "Signup", new_user_registration_path
