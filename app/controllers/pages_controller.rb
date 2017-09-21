@@ -9,13 +9,13 @@ class PagesController < ApplicationController
 
   def buffer_it
     quote = Quote.find(params[:id])
-    client = Buffer::Client.new(Rails.application.secrets[:buffer][:buffer_api])
+    client = Buffer::Client.new(ENV["buffer_access"])
     client.create_update(
       body: {
         text:
           "#{quote.quote}
            #{quote.author}",
-      profile_ids: Rails.application.secrets[:buffer][:buffer_ids] 
+      profile_ids: ENV["buffer_ids"] 
       },
     )
     redirect_to(request.env['HTTP_REFERER'])
