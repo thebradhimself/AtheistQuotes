@@ -13,8 +13,7 @@ class PagesController < ApplicationController
     client.create_update(
       body: {
         text:
-          "#{quote.quote}
-           #{quote.author}",
+          "#{quote.quote}\n\n#{quote.author}",
       profile_ids: ["#{ENV['buffer_twitter']}", "#{ENV['buffer_fb_god']}", "#{ENV['buffer_fb_aq']}"]
       },
     )
