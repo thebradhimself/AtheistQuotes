@@ -1,8 +1,24 @@
 class PagesController < ApplicationController
+  access all: [:index, :authors, :author], admin: :all, user: [:favoriting, :favorites]
 
   def index
     @quotes = Quote.all.order(:id).page(params[:page])
     @favorites = current_user.quotefavorites.pluck(:quote_id) if current_user
+
+  end
+
+  def buffer_it
+    quote = Quote.find(params[:id])
+    client = Buffer::Client.new(Rails.application.secrets[:buffer][:buffer_api])
+    client.create_update(
+      body: {
+        text:
+          "#{quote.quote}
+           #{quote.author}",
+      profile_ids: Rails.application.secrets[:buffer][:buffer_ids] 
+      },
+    )
+    redirect_to(request.env['HTTP_REFERER'])
   end
 
   def app

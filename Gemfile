@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '5.1.0'
 # Use postgresql as the database for Active Record
@@ -29,13 +28,11 @@ gem 'jbuilder'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'rails_12factor', group: :production
-
 gem 'puma'
-#new styling shit
 gem 'materialize-sass'
-
-#ReactJS
-gem 'react-rails'
+gem 'buffer'
+gem 'omniauth-buffer2'
+gem 'petergate'
 
 #Devise
 gem 'devise', git: 'https://github.com/gogovan/devise.git', branch: 'rails-5.1'

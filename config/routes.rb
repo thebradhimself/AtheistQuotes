@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   post 'update' => 'pages#update'
   get '/author' => 'pages#author'
   get '/authors' => 'pages#authors'
-
+  get '/buffer_it', to: "pages#buffer_it"
   # namespace :api, defaults: {format: 'json'} do
   #   namespace :v1 do
   #     get '/allquotes' => 'pages#allquotes'
