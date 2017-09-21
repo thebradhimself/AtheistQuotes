@@ -15,7 +15,7 @@ class PagesController < ApplicationController
         text:
           "#{quote.quote}
            #{quote.author}",
-      profile_ids: ENV["buffer_ids"] 
+      profile_ids: ["#{ENV['buffer_twitter']}", "#{ENV['buffer_fb_god']}", "#{ENV['buffer_fb_aq']}"]
       },
     )
     redirect_to(request.env['HTTP_REFERER'])
