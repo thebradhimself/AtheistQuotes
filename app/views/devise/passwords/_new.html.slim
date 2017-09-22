@@ -1,0 +1,19 @@
+.modal.fade#forgotPasswordModal tabindex="-1" role="dialog" aria=labelledby="signUpModalLabel"
+  .modal-dialog role="document"
+    .modal-content
+      .modal-header
+        button type="button" class="close" data-dismiss="modal" aria-label="Close"
+          span aria-hidden="true"
+            | &times;
+        h4 Forgot your password?
+      .modal-body
+        = form_for(:user, url: password_path(:user), html: { method: :post }) do |f|
+          .form-group
+            = f.label :email
+            br
+            = f.email_field :email, autofocus: true, class: 'form-control'
+          .actions
+            = f.submit "Send me reset password instructions", class: "btn btn-default"
+      .modal-footer
+        button.btn.btn-default type="button" data-dismiss="modal"
+          | Close

@@ -12,7 +12,7 @@
             .text-center
               | Favorite 
       tbody
-        - @quotes.each do |quote|
+        - @favs.each do |quote|
           tr
             td.col-sm-9
               .top-bottom-30
@@ -34,5 +34,3 @@ javascript:
   $(document).on('click', '.buffer-submit', function(){
     $(this).parents('form').submit()
   });
-  
-

@@ -43,4 +43,12 @@ $(document).ready(function(){
       }
     });
   });
+
+  $('#signupModal').on('shown.bs.modal', function () {
+    $('#myInput').focus()
+  });
+  
+  $('#forgotPasswordModal').on('shown.bs.modal', function () {
+    $('#myInput').focus()
+  });
 });
