@@ -6,7 +6,6 @@ gem 'rails', '5.1.0'
 gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails'
-
 gem 'bootstrap-sass'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -14,7 +13,6 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
-# gem 'petergate'
 
 #cors api requests
 gem 'rack-cors', :require => 'rack/cors'
@@ -29,7 +27,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'rails_12factor', group: :production
 gem 'puma'
-gem 'materialize-sass'
 gem 'buffer'
 gem 'omniauth-buffer2'
 gem 'petergate'

@@ -1,16 +1,26 @@
-table.highlight.striped.responsive#quotes-table
-  - @quotes.each do |quote|
-    tr
-      td
-        = quote.quote
-      td
-        = link_to "#{quote.author}", "/author?author=#{quote.author}", class: "author"
-      td
-        - if current_user && @favorites.include?(quote.id)
-          i.fa.fa-heart.fa-2x.favorite-quote data-id="#{quote.id}"
-        - else
-          i.fa.fa-heart-o.fa-2x.favorite-quote data-id="#{quote.id}" data-user=current_user.present?.to_s
-        br
-        = link_to "Add", buffer_it_path(id: quote.id) if(logged_in?(:admin))
-
-= paginate @quotes
+.row
+  .col-sm-12
+    table.table-hover.table-bordered.table-responsive#quotes-table
+      thead
+        tr
+          th.col-sm-9
+            | Quote
+          th.col-sm-2
+            | Author
+          th
+            | Favorite 
+      tbody
+        - @quotes.each do |quote|
+          tr
+            td.col-sm-9
+              .top-bottom-30
+                = quote.quote.html_safe
+            td.col-sm-2
+              = link_to "#{quote.author}", "/author?author=#{quote.author}", class: "author pull-right"
+            td.col-sm-1
+              - if current_user && @favorites.include?(quote.id)
+                i.fa.fa-heart.fa-2x.favorite-quote.top-bottom-30 data-id="#{quote.id}"
+              - else
+                i.fa.fa-heart-o.fa-2x.favorite-quote data-id="#{quote.id}" data-user=current_user.present?.to_s
+              br
+              = link_to "Add", buffer_it_path(id: quote.id) if(logged_in?(:admin))

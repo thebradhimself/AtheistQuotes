@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   access all: [:index, :authors, :author], admin: :all, user: [:favoriting, :favorites]
 
   def index
-    @quotes = Quote.all.order(:id).page(params[:page])
+    @quotes = Quote.all
     @favorites = current_user.quotefavorites.pluck(:quote_id) if current_user
 
   end
@@ -13,8 +13,7 @@ class PagesController < ApplicationController
     client.create_update(
       body: {
         text:
-          "#{quote.quote}
-           #{quote.author}",
+          "#{quote.quote}\n\n#{quote.author}",
       profile_ids: ["#{ENV['buffer_twitter']}", "#{ENV['buffer_fb_god']}", "#{ENV['buffer_fb_aq']}"]
       },
     )
