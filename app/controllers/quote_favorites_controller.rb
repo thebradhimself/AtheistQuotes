@@ -24,18 +24,4 @@ class QuoteFavoritesController < ApplicationController
     @favs = current_user.quotes
     @favorites = @favs.pluck(:id)
   end
-
-  # def check_favorite
-  #   checked = current_user.quote_favorites.pluck(:quote_id).include?(params[:id].to_i)
-  #   render json: {checked: checked}
-  # end
-  #
-  # def getFavoriteQuote
-  #   render json: {quote: Quote.find(params[:id])}
-  # end
-  #
-  # def removeFavorite
-  #   QuoteFavorite.where(quote_id: params[:id], user_id: current_user.id).first.destroy
-  #   render json: {favorites: current_user.quote_favorites}
-  # end
 end 

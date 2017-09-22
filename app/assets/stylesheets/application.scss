@@ -13,6 +13,15 @@ a.author{
   weight: bold;
 }
 
+a.authors{
+  color: white;
+  white: bold;
+  &:hover{
+    color: white;
+  }
+}
+
+
 .the-head {
   font-family: 'Poiret One', cursive;
 }

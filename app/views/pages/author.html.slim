@@ -1,22 +1,39 @@
 .row
-  .col.m10
-    h2
-      | Quotes by 
-      = @quotes.first.author
-    hr
-    table.bordered
-      - @quotes.each do |q|
+  .col-sm-12
+    table.table-hover.table-bordered.table-responsive#quotes-table
+      thead
         tr
-          td
-            = q.quote
-    .row
-      .col.m6
-        = paginate @quotes
-  .col.m2
-    script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" 
-    /! weLoveAtheism2
-    ins.adsbygoogle data-ad-client="ca-pub-5362989041036391" data-ad-slot="4671044015" style="display:inline-block;width:120px;height:600px" 
-    javascript:
-      (adsbygoogle = window.adsbygoogle || []).push({});
-        
+          th.col-sm-9
+            | Quote
+          th.col-sm-2
+            .pull-right
+              | Author
+          th
+            .text-center
+              | Favorite 
+      tbody
+        - @quotes.each do |quote|
+          tr
+            td.col-sm-9
+              .top-bottom-30
+                = quote.quote.html_safe
+            td.col-sm-2
+              = link_to "#{quote.author}", "/author?author=#{quote.author}", class: "author pull-right"
+            td.col-sm-1
+              .text-center
+                - if current_user && @favorites.include?(quote.id)
+                  i.fa.fa-heart.fa-2x.favorite-quote.top-bottom-30 data-id="#{quote.id}"
+                - else
+                  i.fa.fa-heart-o.fa-2x.favorite-quote data-id="#{quote.id}" data-user=current_user.present?.to_s
+              br
+              - if(logged_in?(:admin))
+                = form_with url: buffer_it_url, class: "buffer-add-form", remote: true  do |f|
+                  = f.hidden_field :id, value: quote.id
+                  = f.submit "Buffer", class: "buffer-submit"
+javascript:
+  $(document).on('click', '.buffer-submit', function(){
+    $(this).parents('form').submit()
+  });
+  
+
 

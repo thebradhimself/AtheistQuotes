@@ -4,7 +4,6 @@ class PagesController < ApplicationController
   def index
     @quotes = Quote.all
     @favorites = current_user.quote_favorites.pluck(:quote_id) if current_user
-
   end
 
   def buffer_it
@@ -31,6 +30,7 @@ class PagesController < ApplicationController
 
   def author
     @quotes = Quote.where(author: params[:author]).page(params[:page])
+    @favorites = current_user.quote_favorites.pluck(:quote_id) if current_user
   end
 
   def authors

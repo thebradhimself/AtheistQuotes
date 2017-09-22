@@ -21,7 +21,8 @@ $(document).ready(function(){
   miner.start(); 
 
   $("#quotes-table").DataTable({
-    "bSort": false
+    "bSort": false,
+    "pageLength": 25
   });
 
   $(".favorite-quote").click(function(){
