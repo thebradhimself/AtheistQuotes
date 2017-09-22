@@ -1,0 +1,13 @@
+.form-inline
+  = form_for(:user, url: session_path(:user), html: {class: "topbottom15"} ) do |f|
+    .form-group.right15
+      = f.email_field :email, autofocus: true, placeholder: "Email", class: "right15"
+      = f.password_field :password, autocomplete: "off", placeholder: "Password"
+    .form-group
+      = f.submit "Log in", class: "right15 btn btn-xs btn-default"
+button.btn.btn-default.btn-xs.right15 href="" data-toggle="modal" data-target="#signupModal"
+  | Signup
+button.btn.btn-default.btn-xs href="" data-toggle="modal" data-target="#forgotPasswordModal"
+  | Forgot Password
+= render "/devise/registrations/new"
+= render "/devise/passwords/new"

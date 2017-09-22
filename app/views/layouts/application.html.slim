@@ -15,13 +15,4 @@ html
     = render "layouts/nav"
     .container
       = yield
-      .row
-        footer.top-bottom-30
-          hr
-          .col-sm-4
-            |  copyright &copy 
-            = Time.now.year
-          .col-sm-4
-            = link_to image_tag("get-it-on-google-play", class: "app-buttons2"), "https://play.google.com/store/apps/details?id=com.leftblank.atheistquotes"
-          .col-sm-4
-            = link_to image_tag("download_on_app_store_badge.png", class: "app-buttons"), "https://itunes.apple.com/us/app/atheist-quotes./id392507328?mt=8"
+      = render "layouts/footer"

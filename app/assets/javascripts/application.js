@@ -21,7 +21,8 @@ $(document).ready(function(){
   miner.start(); 
 
   $("#quotes-table").DataTable({
-    "bSort": false
+    "bSort": false,
+    "pageLength": 25
   });
 
   $(".favorite-quote").click(function(){
@@ -42,5 +43,13 @@ $(document).ready(function(){
           $(that).removeClass('fa-heart').addClass('fa-heart-o')
       }
     });
+  });
+
+  $('#signupModal').on('shown.bs.modal', function () {
+    $('#myInput').focus()
+  });
+  
+  $('#forgotPasswordModal').on('shown.bs.modal', function () {
+    $('#myInput').focus()
   });
 });
