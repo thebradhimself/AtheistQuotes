@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   access all: [:index, :authors, :author], admin: :all, user: [:favoriting, :favorites]
 
   def index
-    @quotes = Quote.all.order(:id).page(params[:page])
+    @quotes = Quote.all
     @favorites = current_user.quotefavorites.pluck(:quote_id) if current_user
 
   end

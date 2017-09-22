@@ -12,16 +12,16 @@ html
     meta[name="description" content="Thousands of atheist quotes"]
     meta[name="keywords" content="atheist, atheism, quotes, atheist quotes, atheism quotes, richard dawkins, sam harris, freethinker, religion, bible, quran, atheist-quotes, quote"]
   body
+    = render "layouts/nav"
     .container
-      = render "layouts/nav"
       = yield
       .row
         footer
           hr
-          .col.s4
+          .col-sm-4
             |  copyright &copy 
             = Time.now.year
-          .col.s4
+          .col-sm-4
             = link_to image_tag("get-it-on-google-play", class: "app-buttons2"), "https://play.google.com/store/apps/details?id=com.leftblank.atheistquotes"
-          .col.s4
+          .col-sm-4
             = link_to image_tag("download_on_app_store_badge.png", class: "app-buttons"), "https://itunes.apple.com/us/app/atheist-quotes./id392507328?mt=8"

@@ -1,43 +1,23 @@
-nav[style="margin-bottom: 5%;"]
-  .nav-wrapper.green[style="margin-top: 3%;"]
-    a.brand-logo.center[href="/"]
-      | Atheist Quotes
-    a.button-collapse[href="#" data-activates="mobile"]
-      i.mdi-navigation-menu
-    ul#nav-mobile.left.hide-on-med-and-down
-      li
-        a[href="/"]
-          | Home
-      li
-        a[href="/authors"]
-          | Authors
-      - if current_user
+nav.navbar.navbar-default
+  .container-fluid
+    /! Brand and toggle get grouped for better mobile display
+    .navbar-header
+      button.navbar-toggle.collapsed aria-expanded="false" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button" 
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a.navbar-brand href="/"  Atheist-Quotes
+    #bs-example-navbar-collapse-1.collapse.navbar-collapse
+      ul.nav.navbar-nav
         li
-          a[href="/favorites"]
-            | Favorites
-    - if current_user
-      ul#nav-mobile.right.hide-on-med-and-down
+          = link_to "Authors", authors_path
+        - if current_user
+          li
+            = link_to "Favorites", favorites_path
+      ul.nav.navbar-nav.navbar-right
         li
-          = link_to "Logout", destroy_user_session_path, method: :delete
-    - else
-      ul#nav-mobile.right.hide-on-med-and-down
-        li
-          = link_to "Login", new_user_session_path
-        li
-          = link_to "Signup", new_user_registration_path
-    ul#mobile.side-nav
-      li
-        a[href="/"]
-          | Home
-      - if current_user
-        li
-          a[href="/favorites"]
-            | Favorites
-      - if current_user
-        li
-          = link_to "Logout", destroy_user_session_path, method: :delete
-      - else
-        li
-          = link_to "Login", new_user_session_path
-        li
-          = link_to "Signup", new_user_registration_path
+          = link_to "Login/Signup", new_user_session_path 
+        - if current_user
+          li
+            = link_to "Logout", destroy_user_session_path, method: :delete

