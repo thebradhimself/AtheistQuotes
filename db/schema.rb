@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 20170922204745) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "add_quotes", force: :cascade do |t|
+  create_table "add_quotes", id: :serial, force: :cascade do |t|
     t.string "quote", null: false
     t.string "author", null: false
     t.datetime "created_at", null: false
@@ -37,21 +37,21 @@ ActiveRecord::Schema.define(version: 20170922204745) do
     t.index ["priority", "run_at"], name: "delayed_jobs_priority"
   end
 
-  create_table "quote_favorites", force: :cascade do |t|
+  create_table "quote_favorites", id: :serial, force: :cascade do |t|
     t.integer "quote_id"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "quotes", force: :cascade do |t|
+  create_table "quotes", id: :serial, force: :cascade do |t|
     t.string "the_quote"
     t.string "quotes"
     t.string "quote"
     t.string "author"
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", id: :serial, force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -60,8 +60,8 @@ ActiveRecord::Schema.define(version: 20170922204745) do
     t.integer "sign_in_count", default: 0, null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.string "current_sign_in_ip"
-    t.string "last_sign_in_ip"
+    t.inet "current_sign_in_ip"
+    t.inet "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "admin", default: false
