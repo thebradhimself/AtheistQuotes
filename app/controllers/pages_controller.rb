@@ -9,7 +9,7 @@ class PagesController < ApplicationController
   def buffer_it
     quote = Quote.find(params[:id])
     client = Buffer::Client.new(ENV["buffer_access"])
-    client.delay.create_update(
+    client.create_update(
       body: {
         text:
           "#{quote.quote}\n\n#{quote.author}",
